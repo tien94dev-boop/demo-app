@@ -1,5 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
+
+const oswald = Oswald({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['200', '400', '700'],
+  variable: '--font-oswald', // Khai báo biến ở đây
+  display: 'swap',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${oswald.className} antialiased max-w-5xl mx-auto`}
       >
         {children}
       </body>
